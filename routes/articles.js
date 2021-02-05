@@ -41,7 +41,7 @@ function saveArticle(path) {
         article.difficulty = req.body.difficulty;
         article.distanceFromDowntown = req.body.distanceFromDowntown;
         article.description = req.body.description;
-        article.reviews = req.body.reviews;
+        article.review = req.body.review;
     
         try {
             article = await article.save();

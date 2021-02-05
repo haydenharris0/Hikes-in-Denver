@@ -22,7 +22,9 @@
                 <div><%= article.description %></div>
             </div>
             <h1>Reviews</h1>
-            <div class=" card mb-4"><%= article.reviews %></div>
+            <% for (let i = 0; i < article.review.length; i++ ){ %>
+                <div class=" card mb-4"><%= article.review[i] %></div>
+            <% }; %>
             <a href="/" class="btn btn-primary ">All Hikes</a>
             <a href="/articles/edit/<%= article.id %>" class="btn btn-secondary ">Edit</a>
         </div>
