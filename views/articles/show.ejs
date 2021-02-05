@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hikes in Denver</title> 
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="mb-1"><%= article.title %></h1>
+            <div class="text-muted mb-2"><%= article.createdAt.toLocaleDateString() %></div>
+            <a href="/" class="btn btn-primary ">All Hikes</a>
+            <a href="/articles/edit/<%= article.id %>" class="btn btn-secondary ">Edit</a>
+
+            <div>
+                <%= article.description %>
+            </div>
+
+        </div>
+    </body>
+</html>
