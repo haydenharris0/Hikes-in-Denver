@@ -14,7 +14,7 @@
     <body>
         <div class="container">
             <h1 class="mb-4">List of Hikes</h1>
-            <a href="/articles/new" class="btn btn-success">New Hike</a>
+            <a href="/articles/new" class="btn btn-outline-success">New Hike</a>
 
             <% articles.forEach(article => { %>
                 <div class="card mt-4">
@@ -25,11 +25,8 @@
                     <div class="card-text mb-2">
                         Hike length is <%= article.length %> miles and it's rated as <%= article.difficulty %>
                         <div>
-                            <a href="articles/<%= article.id %>" class="btn btn-dark">Read More</a>
-                            <a href="articles/edit/<%= article.id %>" class="btn btn-secondary">Edit</a>
-                            <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                                <button type="submit" class=" btn btn-danger">Delete</button>
-                            </form>
+                            <a href="articles/<%= article.id %>" class="btn btn-outline-dark">Read More</a>
+                            <a href="articles/edit/<%= article.id %>" class="btn btn-outline-secondary">Edit</a>
                         </div>
                     </div>
                 </div>

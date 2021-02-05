@@ -17,6 +17,11 @@
             <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
                 <%- include('_form_fields') %>
             </form>
+
+            <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline align-right">
+                <button type="submit" class=" btn btn-outline-danger ">Delete</button>
+            </form>
+
         </div>
     </body>
 </html>
