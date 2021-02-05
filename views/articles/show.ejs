@@ -8,17 +8,23 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Hikes in Denver</title> 
     </head>
+    <header>
+        <%- include('_header') %>
+    </header>
     <body>
         <div class="container">
             <h1 class="mb-1"><%= article.title %></h1>
-            <div class="text-muted mb-2"><%= article.createdAt.toLocaleDateString() %></div>
+            <div class="text-muted mb-2">Hike was posted on <%= article.createdAt.toLocaleDateString() %></div>
+            <div class="card mb-4">
+                <div>Hike legnth is <%= article.length %> miles</div>
+                <div>The hike is rated as <%= article.difficulty %></div>
+                <div class="mb-4">The hike is <%= article.distanceFromDowntown %> miles from downtown</div>
+                <div><%= article.description %></div>
+            </div>
+            <h1>Reviews</h1>
+            <div class=" card mb-4"><%= article.reviews %></div>
             <a href="/" class="btn btn-primary ">All Hikes</a>
             <a href="/articles/edit/<%= article.id %>" class="btn btn-secondary ">Edit</a>
-
-            <div>
-                <%= article.description %>
-            </div>
-
         </div>
     </body>
 </html>

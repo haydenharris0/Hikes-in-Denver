@@ -17,9 +17,10 @@
                 <div class="card mt-4">
                     <div class="card-body">
                         <h4 class="card-title"><%= article.title %></h4>
-                        <div class="card-subtitle text-muted mb-2"><%= article.createdAt.toLocaleDateString() %></div>
+                        <div class="card-subtitle text-muted mb-2">Hike was posted on <%= article.createdAt.toLocaleDateString() %></div>
                     </div>
-                    <div class="card-text mb-2"><%= article.description %>
+                    <div class="card-text mb-2">
+                        Hike length is <%= article.length %> miles and it's rated as <%= article.difficulty %>
                         <div>
                             <a href="articles/<%= article.id %>" class="btn btn-dark">Read More</a>
                             <a href="articles/edit/<%= article.id %>" class="btn btn-secondary">Edit</a>
