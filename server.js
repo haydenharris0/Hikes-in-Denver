@@ -17,7 +17,7 @@ const articleRouter = require('./routes/articles');
 //test
 const User = require('./models/user');
 
-mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/hikes', { 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/hikes', { 
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true 
