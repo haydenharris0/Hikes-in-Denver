@@ -6,12 +6,16 @@ const passport = require('passport');
 const PORT = 3000;
 const app = express();
 
+//for oauth
 require('dotenv').config();
 require('./config/passport');
 
 
 const Article = require('./models/article');
 const articleRouter = require('./routes/articles');
+
+//test
+const User = require('./models/user');
 
 mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/hikes', { 
   useNewUrlParser: true,
@@ -23,12 +27,14 @@ mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/hikes', {
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
 
+//for oauth
 app.use(session({
   secret: 'SEIRFLEXRocks!',
   resave: false,
   saveUninitialized: true
 }));
 
+//for oauth
 app.use(passport.initialize());
 app.use(passport.session());
 

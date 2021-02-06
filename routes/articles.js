@@ -2,20 +2,24 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 
+//test
+require('dotenv').config();
+
 const Article = require('./../models/article');
+const User = require('./../models/user');
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
     'google',
-    { scope: ['profile', 'email'] }
+    { scope: ['profile', 'email'] },
   ));
 
   // Google OAuth callback route
  router.get('/oauth2callback', passport.authenticate(
     'google',
     {
-      successRedirect : '/user',
-      failureRedirect : '/'
+      successRedirect : '/article',
+      failureRedirect : '/home'
     }
   ));
 
@@ -27,6 +31,10 @@ router.get('/auth/google', passport.authenticate(
 
 router.get('/new', (req, res) => {
     res.render('articles/new', {article: new Article()});
+});
+
+router.get('/user', (req, res) => {
+    res.render('articles/user', {article: new Article()})
 });
 
 router.get('/edit/:id', async (req, res) => {
