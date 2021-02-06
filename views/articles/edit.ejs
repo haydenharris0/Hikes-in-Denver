@@ -16,9 +16,9 @@
             <h1 class="mb-4">Edit Hike</h1>
             <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
                 <%- include('_form_fields') %>
-                <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline align-right">
-                    <button type="submit" class="btn btn-outline-danger">Delete</button>
-                </form>
+            </form>
+            <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline align-right">
+                <button type="submit" class="btn btn-outline-danger">Delete</button>
             </form>
         </div>
     </body>
