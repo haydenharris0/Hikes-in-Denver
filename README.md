@@ -18,7 +18,11 @@ A blog where you can add, review, and rate hikes around Denver.
     - Passport
     - GoogleOAuth
 
-## Approach:
+## User Stories:
+
+    -"As a user I want to be able to view the hikes without having to login."
+    -"As a user I want to be able to rate hikes and write reviews on hikes"
+    -"as a user I want a list of the top rated hikes"
 
 ## Challenges:
 
