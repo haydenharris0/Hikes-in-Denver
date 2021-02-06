@@ -11,16 +11,17 @@
     <header>
         <%- include('_header') %>
     </header>
-    <body>
+    <body style="background-image: url(https://images.unsplash.com/photo-1612015746449-99fffdd8977f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2534&q=80);
+                 background-size: cover">
         <div class="container">
-            <h1 class="mb-4">List of Hikes</h1>
+            <h1 class="mt-4 mb-4">List of Hikes</h1>
             <a href="/articles/new" class="btn btn-outline-success">Add a Hike</a>
 
             <% articles.forEach(article => { %>
-                <div class="card mt-4">
+                <div class="card border-dark mt-4" style="opacity: .9;">
                     <div class="card-body">
                         <h4 class="card-title"><%= article.title %></h4>
-                        <div class="card-subtitle text-muted mb-2">Hike was posted on <%= article.createdAt.toLocaleDateString() %></div>
+                        <div class="card-subtitle text-muted mb-2" style="font-size: small;">Hike was posted on <%= article.createdAt.toLocaleDateString() %></div>
                     </div>
                     <div class="card-text mb-2">
                         Hike length is <%= article.length %> miles and it's rated as <%= article.difficulty %>
