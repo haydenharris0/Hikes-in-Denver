@@ -2,7 +2,6 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 
-//test
 require('dotenv').config();
 
 const Article = require('./../models/article');
@@ -18,8 +17,10 @@ router.get('/auth/google', passport.authenticate(
  router.get('/oauth2callback', passport.authenticate(
     'google',
     {
-      successRedirect : '/article',
-      failureRedirect : '/home'
+      successRedirect : '/',
+      failureRedirect : '/articles/auth/google'
+    }, function(req, res) {
+        res.redirect('/');
     }
   ));
 

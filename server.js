@@ -5,7 +5,6 @@ const session = require('express-session');
 const passport = require('passport');
 const app = express();
 
-//for oauth
 require('dotenv').config();
 require('./config/passport');
 
@@ -15,7 +14,6 @@ const PORT = process.env.PORT;
 const Article = require('./models/article');
 const articleRouter = require('./routes/articles');
 
-//test
 const User = require('./models/user');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/hikes', { 
@@ -28,14 +26,12 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/hikes', {
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
 
-//for oauth
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }));
 
-//for oauth
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -47,5 +43,9 @@ app.get('/', async (req, res) => {
 });
 
 app.use('/articles', articleRouter);
+
+app.get('*', function(req, res){
+  res.redirect('/');
+});
 
 app.listen(PORT);
