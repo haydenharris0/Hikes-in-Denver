@@ -22,20 +22,12 @@
                 <div class="mb-4">The hike is <%= article.distanceFromDowntown %> miles from downtown</div>
                 <div><%= article.description %></div>
             </div>
-
-
-
             <div class="card bg-light border-dark mb-4" style="opacity: .9;">
                 <h1 class="mt-2 mb-4">Reviews</h1>
                 <% for (let i = 0; i < article.review.length; i++ ){ %>
                     <p><%= article.review[i] %> </p>
                 <% }; %>
                 </div>
-            
-
-
-
-
             <a href="/" class="btn btn-outline-primary ">Home</a>
             <a href="/articles/edit/<%= article.id %>" class="btn btn-outline-secondary">Edit Hike</a>
         </div>
