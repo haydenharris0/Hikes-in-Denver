@@ -3,12 +3,13 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
-const PORT = 3000;
 const app = express();
 
 //for oauth
 require('dotenv').config();
 require('./config/passport');
+
+const PORT = process.env.PORT; 
 
 
 const Article = require('./models/article');
@@ -29,7 +30,7 @@ app.use(express.urlencoded({extended: false}));
 
 //for oauth
 app.use(session({
-  secret: 'SEIRFLEXRocks!',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }));
