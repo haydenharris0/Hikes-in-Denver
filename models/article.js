@@ -13,6 +13,10 @@ const articleSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    loop: {
+        type: String,
+        required: true
+    },
     distanceFromDowntown: {
         type: Number,
         required: true
